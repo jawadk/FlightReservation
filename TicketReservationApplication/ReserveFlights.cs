@@ -52,11 +52,17 @@ namespace TicketReservationApplication
                 dtable = crud.getTable(query);
                 dataGridView1.DataSource = dtable;
                 DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
+                
                 dataGridView1.Columns.Add(btn);
                 btn.HeaderText = "Booking";
                 btn.Text = "Book Now";
                 btn.Name = "btn";
+
+                //Button test = new Button();
+                //dataGridView1.Columns["Booking"].c
+
                 btn.UseColumnTextForButtonValue = true;
+                
 
                 
 
@@ -97,6 +103,15 @@ namespace TicketReservationApplication
             catch (Exception excep)
             {
                 MessageBox.Show(excep.Message + " Sorry; Couldn't find the Correct ID");
+            }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 8)
+            {
+                //Write here your code...
+                MessageBox.Show("Congrats..!!! Beta your flight has been booked. :P :P :P ;) :) :D :D :D :D :D :D :D :D :D :D :D");
             }
         }
     }
